@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://www.jsdelivr.com/package/npm/futura-font">
+    <link rel="stylesheet" href="https://www.jsdelivr.com/package/npm/futura-font">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Futura+Medium&display=swap">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        .my-slider-progress {
+          background: #ccc;
+        }
+        
+        .my-slider-progress-bar {
+          background: greenyellow;
+          height: 2px;
+          transition: width 400ms ease;
+          width: 0;
+        }
+      </style>
+       <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="hearder_top">
+            <ul>
+              <li><a href="" style="text-decoration: none; color: black;">Contact Us</a></li>
+              <li class="login_header"><a href="" style="text-decoration: none; color: black;">login </a></li>
+                <li > <span class="acngle-right">/  </span> <a href="" style="text-decoration: none; color: black;">Register</a></li>
+            </ul>
+        </div>
+        <div class="hearde_bottom">
+            <div class="left_header">
+                <a href="" style="text-decoration: none;"></a>
+                <img src="./style/logo.png" alt="">
+                <div class="logo">Fresh Flowers & Bouquets
+                </div>
+                </a>
+            </div>
+            <div class="center_header">
+            <input type="text" placeholder="What are you looking for?">   
+            <button><i class="fa-solid fa-magnifying-glass"></i></button> 
+            </div>
+            <div class="right_header"> 
+            <a href="" style="text-decoration: none; color: black;">
+            
+                <span class="move">0</span>
+                <span class="total-price">
+                     <span class="js-total-price">
+                        Cart Empty  
+                    </span>  <i class="fa fa-shopping-cart"></i>
+            </span>
+            <i></i>
+            </a>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+             
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home <span><i class="fa-solid fa-chevron-down"></i></span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Shop <span><i class="fa-solid fa-chevron-down"></i></span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Occasions <span><i class="fa-solid fa-chevron-down"></i></span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Blog </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact </a>
+                  </li>
+                </ul>
+                <span class="navbar-text">
+                  Order in the next 2 hours 31 minutes for delivery tomorrow
+                </span>
+              </div>
+            </div>
+          </nav>
+    </header>
+<!-- Style the bar as you like -->
+<!-- Style the bar as you like -->
+
+  
+  <div class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide ">Slide 01</li>
+        <li class="splide__slide">Slide 2</li>
+        <li class="splide__slide">Slide 031</li>
+        <li class="splide__slide">Slide 031</li>
+
+      </ul>
+    </div>
+    
+    <!-- Add the progress bar element -->
+    <div class="my-slider-progress">
+      <div class="my-slider-progress-bar"></div>
+    </div>
+  </div>
+  
+  <script>
+    var splide = new Splide( '.splide' );
+    var bar    = splide.root.querySelector( '.my-carousel-progress-bar' );
+    
+    // Updates the bar width whenever the carousel moves:
+    splide.on( 'mounted move', function () {
+      var end  = splide.Components.Controller.getEnd() + 1;
+      var rate = Math.min( ( splide.index + 1 ) / end, 1 );
+      bar.style.width = String( 100 * rate ) + '%';
+    } );
+    
+    splide.mount();
+  </script>
+
+</body>
+
+</html>
